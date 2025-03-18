@@ -51,6 +51,7 @@ public class ParqueaderoController {
 		if(opcion==1) return "parqueaderos-add";
 		return "parqueaderos-del";
 	}
+
 	
 
 	@PostMapping("/add")

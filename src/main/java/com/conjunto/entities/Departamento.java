@@ -29,6 +29,8 @@ public class Departamento {
 				private int consumoActualLuz;
 				@Column(name="consumo_actual_agua")
 				private int consumoActualAgua;
+				@Column(name="num_personas")
+				private int numPersonas;
 				@JoinColumn(name= "id_admin")
 				@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
 				private Administrador administrador;
@@ -39,7 +41,7 @@ public class Departamento {
 				
 				}
 				public Departamento(int idDepartamento, int numCuartos, int baños, int sala, int cocina,
-						int consumoActualLuz, int consumoActualAgua, Administrador administrador, Edificio edificio) {
+						int consumoActualLuz, int consumoActualAgua, int numPersonas,Administrador administrador, Edificio edificio) {
 					super();
 					this.idDepartamento = idDepartamento;
 					this.numCuartos = numCuartos;
@@ -50,6 +52,7 @@ public class Departamento {
 					this.consumoActualAgua = consumoActualAgua;
 					this.administrador = administrador;
 					this.edificio = edificio;
+					this.numPersonas=numPersonas;
 				}
 				public int getIdDepartamento() {
 					return idDepartamento;
@@ -105,11 +108,18 @@ public class Departamento {
 				public void setEdificio(Edificio edificio) {
 					this.edificio = edificio;
 				}
+				
+				public int getNumPersonas() {
+					return numPersonas;
+				}
+				public void setNumPersonas(int numPersonas) {
+					this.numPersonas = numPersonas;
+				}
 				@Override
 				public String toString() {
 					return "Departamento [idDepartamento=" + idDepartamento + ", numCuartos=" + numCuartos + ", baños="
 							+ baños + ", sala=" + sala + ", cocina=" + cocina + ", consumoActualLuz=" + consumoActualLuz
-							+ ", consumoActualAgua=" + consumoActualAgua + ", administrador=" + administrador
+							+ ", consumoActualAgua=" + consumoActualAgua + ", numPersonas=" + numPersonas + ", administrador=" + administrador
 							+ ", edificio=" + edificio + "]";
 				}
 			

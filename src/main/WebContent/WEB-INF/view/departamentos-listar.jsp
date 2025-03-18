@@ -32,7 +32,7 @@
       </ul>
       <!-- Botón de Iniciar sesión como Admin alineado a la derecha -->
       <div class="d-flex">
-        <a href="login/" class="btn btn-outline-primary">Iniciar sesión como Admin</a>
+        <a href="/bddepartamentos-web/login/" class="btn btn-outline-primary">Iniciar sesión como Admin</a>
       </div>
     </div>
   </div>
@@ -57,6 +57,10 @@ Sala
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACGElEQVR4nO2XP0/bQByGb4C1Ep+gC0tVoE4FZXKUKIniiIEwlI/AVgkfAymxa6HKF2BFQkL8GVDIgPgI0IYiGip14t8EQ20Upkj1AohCfshS4lQ1BLc5nBy9R3rl32Dp3kd3lm2EOByOJ2SV7GCVwJ+RVX0bsQC+o3w1iAUwqwLvNO2ZrOgr9QSwoq+lUpkO1GqMqaRfVslx3fI1iR+jqi6iVkDTtDZZyYxjVb/yVN6Jfo1VfWpkZL69aeXH0h+fY4V8+bvirnyTNdLpe/lRRR/GCrEaLF85UsTCHzJvfRWQFXJBpXztSJ37KrCQXQfa8VVgdiH7a245B7Qyu7h65asAh8PhtAY9qcOdnolD6J44gK70AbxM78MLZW/7X+/zhaEzGEgW4TRZBKCRwSKYySIkYPfVwE1BOC0XBKCRm6+CCQUh4RKoLAiUY9gL0ipfrkkYLoHqot8v61+95Pd7aZcvV3KvAO08VGRp8g0Eg0EIh8MQjUYhHo9DdkpkR6BMawf6tix4jDAvUPqEPMfMec+9AoHpYxDeHzWUwMxJ8wSEBstXwwVyfAeOfDtCkiQ5z4A9M/cMxGIxR8CemROIRCKOgD0zJxAKhRwBe2ZOQBRFR8CemRMo8RcZekI7EJg5abj862Z8C/VuWSb1r9G8ZZQ2kUlbwFhF7l/K3ryVoCqRt4y+zz+l0gZKeJUwPZY3ckhyCXA4/ym3CQj7aTrALloAAAAASUVORK5CYII=" alt="kitchen-room">      
 </th>
 <th>
+Número de Personas
+<br>
+<img width="72px" src="/bddepartamentos-web/resources/img/personas.png" alt="personas"></th>
+ <th>
 Encargado
 <br>
 <img src="data:image/png;base64,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" alt="admin-settings-male--v1"></th>
@@ -70,6 +74,7 @@ Reservar
                     <td>${departamento.baños}</td>
                     <td>${departamento.sala}</td>
                     <td>${departamento.cocina}</td>
+                    <td>${departamento.numPersonas}</td>
                     <td>${departamento.administrador.nombre} ${departamento.administrador.apellido}</td>
                     <td><a id="miEnlace" href="https://w.app/fcgmki" class="btn btn-info" target="_blank" rel="noopener noreferrer">Reservar Ahora</a></td>
                 </tr>

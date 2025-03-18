@@ -47,33 +47,7 @@
     </div>
   </div>
 </nav>
-	<% if (request.getAttribute("errorMessage") != null) { %>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            Swal.fire({
-                title: "Error",
-                text: "<%= request.getAttribute("errorMessage") %>",
-                icon: "error",
-                confirmButtonText: "Aceptar"
-            });
-        });
-    </script>
-<% } %>
 
-<% if (request.getAttribute("successMessage") != null) { %>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            Swal.fire({
-                title: "Éxito",
-                text: "<%= request.getAttribute("successMessage") %>",
-                icon: "success",
-                confirmButtonText: "Aceptar"
-            });
-        });
-    </script>
-<% } %>
 	 <center><button type="button" class="btn btn-primary" onclick="window.location.href='/bddepartamentos-web/parqueaderos/findOne?opcion=1'; return false;">Agregar</button></center>
 	<br>
 		 <center><button type="button" class="btn btn-info" onclick="window.location.href='/bddepartamentos-web/inquilinos/findOne?opcion=1'; return false;">Ir a agregar Inquilino</button></center>
@@ -97,8 +71,9 @@
 					<td>${item.edificio.color}</td>
 					<td>${item.administrador.nombre} ${item.administrador.apellido}</td>
 					<td>
-						<button type="button" class="btn btn-success"
-						 onclick="window.location.href='/bddepartamentos-web/parqueaderos/findOne?opcion=1&idParqueadero=${item.idParqueadero}'; return false;">Actualizar</button>
+		<button type="button" class="btn btn-success"
+		onclick="window.location.href='/bddepartamentos-web/parqueaderos/findOne?opcion=1&idParqueadero=${item.idParqueadero}'; return false;">Actualizar</button>
+						 
 						<button type="button" class="btn btn-danger" onclick="window.location.href='/bddepartamentos-web/parqueaderos/findOne?opcion=2&idParqueadero=${item.idParqueadero}'; return false;">Borrar</button>
 					</td>
 				</tr>
