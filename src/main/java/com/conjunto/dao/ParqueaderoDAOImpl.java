@@ -49,9 +49,12 @@ public class ParqueaderoDAOImpl implements ParqueaderoDAO {
 	@Override
 	@Transactional
 	public void del(int id) {
-		// TODO Auto-generated method stub
-		Session session = sessionFactory.getCurrentSession();
-		session.delete(findOne(id));
+	    Session session = sessionFactory.getCurrentSession();
+	    Parqueadero parqueadero = session.get(Parqueadero.class, id);
+	    if (parqueadero != null) {
+	        session.remove(parqueadero);
+	    }
 	}
+
 
 }

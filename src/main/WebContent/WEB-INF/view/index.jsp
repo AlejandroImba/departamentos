@@ -21,6 +21,7 @@
             color: black;
             text-align: center;
         }
+
     </style>
 </head>
 <body>
@@ -49,6 +50,10 @@
       <!-- Botón de Iniciar sesión como Admin alineado a la derecha -->
       <div class="d-flex">
         <a href="login/" class="btn btn-outline-primary">Iniciar sesión como Admin</a>
+      </div>
+      <br>
+            <div class="d-flex">
+        <a href="loginguardia/" class="btn btn-outline-secondary">Iniciar sesión como Guardia</a>
       </div>
     </div>
   </div>

@@ -37,46 +37,48 @@ public class ParqueaderoController {
 	}
 			
 	@GetMapping("/findOne")
-	private String findOne(@RequestParam("IdParqueadero")@Nullable Integer idParqueadero
-			,@RequestParam("opcion")@Nullable Integer opcion
-			,ModelMap modelMap
-			) {
-		if(idParqueadero != null) {
-			Parqueadero parqueadero = parqueaderoDAO.findOne(idParqueadero);
-			modelMap.addAttribute("parqueadero", parqueadero);
-			
-		}
-		modelMap.addAttribute("edificios", edificioDAO.findAll());
-		modelMap.addAttribute("administradores", administradorDAO.findAll());
-		if(opcion==1) return "parqueaderos-add";
-		return "parqueaderos-del";
+	private String findOne(@RequestParam("idParqueadero") @Nullable Integer idParqueadero,
+	                       @RequestParam("opcion") @Nullable Integer opcion,
+	                       ModelMap modelMap) {
+	    Parqueadero parqueadero = (idParqueadero != null) ? parqueaderoDAO.findOne(idParqueadero) : new Parqueadero();
+	    modelMap.addAttribute("parqueadero", parqueadero);
+	    modelMap.addAttribute("edificios", edificioDAO.findAll());
+	    modelMap.addAttribute("administradores", administradorDAO.findAll());
+	    
+	    return (opcion != null && opcion == 1) ? "parqueaderos-add" : "parqueaderos-del";
 	}
+
 
 	
 
 	@PostMapping("/add")
-	private String add(@RequestParam("idParqueadero")@Nullable Integer idParqueadero
-				,@RequestParam("ubicacion")@Nullable String ubicacion
-				,@RequestParam("disponibilidad")@Nullable String disponibilidad
-				,@RequestParam("idAdministrador")@Nullable Integer idAdministrador	
-				,@RequestParam("idEdificio")@Nullable Integer idEdificio	
-			) {
-		
-		if(idParqueadero == null) {
-			Parqueadero parqueadero = new Parqueadero(0,ubicacion,disponibilidad,administradorDAO.findOne(idAdministrador),
-					edificioDAO.findOne(idEdificio));
-			parqueaderoDAO.add(parqueadero);
-			
-		}else {
-			Parqueadero parqueadero = new Parqueadero(idParqueadero,ubicacion,disponibilidad,administradorDAO.findOne(idAdministrador),
-					edificioDAO.findOne(idEdificio));
-			parqueaderoDAO.up(parqueadero);
-		}
-		
-		
-		return "redirect:/parqueaderos/findAll";
+	private String add(@RequestParam("idParqueadero") @Nullable Integer idParqueadero,
+	                   @RequestParam("ubicacion") @Nullable String ubicacion,
+	                   @RequestParam("disponibilidad") @Nullable String disponibilidad,
+	                   @RequestParam("idAdministrador") @Nullable Integer idAdministrador,
+	                   @RequestParam("idEdificio") @Nullable Integer idEdificio) {
+
+	    Parqueadero parqueadero;
+	    
+	    if (idParqueadero == null) {
+	        parqueadero = new Parqueadero();
+	    } else {
+	        parqueadero = parqueaderoDAO.findOne(idParqueadero);
+	        if (parqueadero == null) {
+	            return "redirect:/parqueaderos/findAll";  // Si no existe, mejor redirigir.
+	        }
+	    }
+	    
+	    parqueadero.setUbicacion(ubicacion);
+	    parqueadero.setDisponibilidad(disponibilidad);
+	    parqueadero.setAdministrador(administradorDAO.findOne(idAdministrador));
+	    parqueadero.setEdificio(edificioDAO.findOne(idEdificio));
+
+	    parqueaderoDAO.up(parqueadero);
+	    
+	    return "redirect:/parqueaderos/findAll";
 	}
-	
+
 	@GetMapping("/del")
 	private String del(@RequestParam("idParqueadero")@Nullable Integer idParqueadero) {
 		parqueaderoDAO.del(idParqueadero);

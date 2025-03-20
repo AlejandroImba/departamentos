@@ -20,8 +20,7 @@ public class DepartamentoController {
 
 	    @Autowired
 	    private DepartamentoDAO departamentoDAO;
-	    @Autowired
-	    private EdificioDAO edificioDAO;
+
 
 	    @GetMapping("/findByEdificio")
 	    public String findByEdificio(@RequestParam("idEdificio") int idEdificio, Model model) {
