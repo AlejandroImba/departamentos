@@ -36,6 +36,7 @@ public class VisitaDAOImpl implements VisitaDAO {
 	public void add(Visita visita) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
+	    System.out.println("Visita a guardar: " + visita);  // Verifica los datos
 		session.saveOrUpdate(visita);
 	}
 

@@ -1,7 +1,9 @@
 package com.conjunto.controller;
 
+
 import java.util.Date;
 import java.util.List;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.conjunto.dao.InquilinoDAO;
 import com.conjunto.dao.VisitaDAO;
+import com.conjunto.entities.Inquilino;
+import com.conjunto.entities.Parqueadero;
 import com.conjunto.entities.Visita;
 
 @Controller
@@ -38,23 +42,47 @@ public class VisitasController {
 	                       ModelMap modelMap) {
 	    Visita visita = (idVisita != null) ? visitaDAO.findOne(idVisita) : new Visita();
 	    modelMap.addAttribute("visita", visita);
-	    modelMap.addAttribute("inquilino", inquilinoDAO.findAll());
+	    modelMap.addAttribute("inquilinos", inquilinoDAO.findAll());
 	    
 	    return (opcion != null && opcion == 1) ? "visitas-add" : "visitas-del";
 	}
 
-
 	
 
+	
 	@PostMapping("/add")
 	private String add(@RequestParam("idVisita") @Nullable Integer idVisita,
 	                   @RequestParam("nombreVisitante") @Nullable String nombreVisitante,
-	                   @RequestParam("fechaVisita") @Nullable Date fechaVisita,
+	                   @RequestParam("fechaVisita") @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaVisita,      
 	                   @RequestParam("motivoVisita") @Nullable String motivoVisita,
 	                   @RequestParam("observaciones") @Nullable String observaciones,
 	                   @RequestParam("idInquilino") @Nullable Integer idInquilino) {
+		if (idVisita == null) {
+	        Visita visita = new Visita(
+	            0,
+	            nombreVisitante,
+	            fechaVisita,
+	            motivoVisita,
+	            observaciones,
+	            inquilinoDAO.findOne(idInquilino)
+	        );
+	        visitaDAO.add(visita);
+	    } else {
+	    	Visita visita = new Visita(
+	            idVisita,
+	            nombreVisitante,
+	            fechaVisita,
+	            motivoVisita,
+	            observaciones,
+	            inquilinoDAO.findOne(idInquilino)
+	        );
+	        visitaDAO.up(visita);
+	    }
 
-	    Visita visita;
+	    return "redirect:/visitas/findAll";
+	}
+	
+	 /*   Visita visita;
 	    
 	    if (idVisita == null) {
 	        visita = new Visita();
@@ -64,19 +92,18 @@ public class VisitasController {
 	            return "redirect:/visitas/findAll";  // Si no existe, mejor redirigir.
 	        }
 	    }
-	    
 	    visita.setNombreVisitante(nombreVisitante);
 	    visita.setFechaVisita(fechaVisita);
 	    visita.setMotivoVisita(motivoVisita);
 	    visita.setObservaciones(observaciones);
 	    visita.setInquilino(inquilinoDAO.findOne(idInquilino));
 
-
 	    visitaDAO.up(visita);
 	    
 	    return "redirect:/visitas/findAll";
-	}
+	}*/
 
+    
 	@GetMapping("/del")
 	private String del(@RequestParam("idVisita")@Nullable Integer idVisita) {
 		visitaDAO.del(idVisita);

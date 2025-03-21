@@ -28,14 +28,14 @@
 			edificio
 			<select class="form-select" aria-label="Default select example" id="idEdificio" name="idEdificio">
 			<c:forEach var="item" items="${edificios}">
-			<option id="" value="${item.idEdificio}">${item.color}</option>
+			 <option value="${item.idEdificio}" ${item.idEdificio == parqueadero.edificio.idEdificio ? 'selected': ''} >${item.color}</option>
 			</c:forEach>
 			</select>
 			<br>
 			Administrador
 			<select class="form-select" aria-label="Default select example" id="idAdministrador" name="idAdministrador">
 			<c:forEach var="item" items="${administradores}">
-			<option id="" value="${item.idAdministrador}">${item.nombre}</option>
+			 <option value="${item.idAdministrador}" ${item.idAdministrador == parqueadero.administrador.idAdministrador ? 'selected': ''} >${item.nombre} ${item.apellido}</option>
 			</c:forEach>
 			</select>
 			<br>

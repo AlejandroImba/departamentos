@@ -35,10 +35,8 @@
     </div>
   </div>
 </nav>
-
 	 <center><button type="button" class="btn btn-primary" onclick="window.location.href='/bddepartamentos-web/visitas/findOne?opcion=1'; return false;">Agregar</button></center>
 	<br>
-		 <center><button type="button" class="btn btn-info" onclick="window.location.href='/bddepartamentos-web/visitas/findOne?opcion=1'; return false;">Ir a agregar Inquilino</button></center>
 	<br>
 	<table class="table table-striped">
  		<thead>
