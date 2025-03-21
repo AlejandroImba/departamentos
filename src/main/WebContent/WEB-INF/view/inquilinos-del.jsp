@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
             });
         } else {
-            // Redirigir si cancela
+            // Redirigir si cancela hola
             window.location.href = "/bddepartamentos-web/inquilinos/findAll";
         }
     });
