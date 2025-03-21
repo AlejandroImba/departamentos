@@ -3,6 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<title>Borrar Inquilino</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+          crossorigin="anonymous">
+                        <link rel="icon" href="/bddepartamentos-web/resources/img/logo.png">
 <!-- Cargar SweetAlert2 -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -27,17 +34,35 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             .then(response => response.text())
             .then(data => {
+                if (data.includes("errorMessage")) {
+                    // Si hay un error, mostrar la alerta de error
+                    Swal.fire({
+                        title: "Error",
+                        text: "No se puede eliminar la visita porque tiene relación en otras tablas.",
+                        icon: "error"
+                    }).then(() => {
+                        window.location.href = "/bddepartamentos-web/inquilinos/findAll";
+                    });
+                } else {
                     // Si se elimina correctamente, mostrar éxito
                     Swal.fire({
                         title: "Eliminado",
-                        text: "El Inquilino ha sido eliminado correctamente.",
+                        text: "El inquilino ha sido eliminado correctamente.",
                         icon: "success"
                     }).then(() => {
                         window.location.href = "/bddepartamentos-web/inquilinos/findAll";
                     });
-                
+                }
             })
-);
+            .catch(error => {
+                Swal.fire({
+                    title: "Error",
+                    text: "Hubo un problema al procesar la solicitud.",
+                    icon: "error"
+                }).then(() => {
+                    window.location.href = "/bddepartamentos-web/inquilinos/findAll";
+                });
+            });
         } else {
             // Redirigir si cancela
             window.location.href = "/bddepartamentos-web/inquilinos/findAll";

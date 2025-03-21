@@ -1,0 +1,32 @@
+
+.imagenback {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(1, 1, 1, 0.6), rgba(1, 1, 1,1.8)),
+        url(/bddepartamentos-web/resources/img/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Asegura que cubra toda la pantalla */
+     display: flex; /* Activa Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+.container h2 {
+    color: white;
+}
+
+.container label {
+    color: white;
+}
+
+.col-md-6 {
+    max-width: 400px;
+    width: 100%;
+}
+
+.container h2{
+	color: white;
+}
+.container label{
+	color: white;
+}

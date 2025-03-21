@@ -9,9 +9,13 @@
 <title>Edificios</title>
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+              <link rel="icon" href="/bddepartamentos-web/resources/img/logo.png">
+                 <link rel="stylesheet" href="/bddepartamentos-web/resources/css/css.css">
 </head>
-<body class="container mt-4">
- <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/bddepartamentos-web/">CONJUNTOSIMBA</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,22 +32,16 @@
          <li class="nav-item">
           <a class="nav-link" href="/bddepartamentos-web/areas/areassociales">Areas Sociales</a>
         </li>
-         <li class="nav-item">
-          <a class="nav-link" href="/bddepartamentos-web/reclamos/formreclamos">Dejar un reclamo</a>
-        </li>
       </ul>
     </div>
                   <div class="d-flex">
         <a href="/bddepartamentos-web/login/" class="btn btn-outline-primary">Iniciar sesión como Admin</a>
       </div>
   </div>
-</nav>
-<h1 class="mb-4">Edificios</h1>
-
-
+     </nav>
 <!-- Tabla de Edificios -->
-<table class="table table-bordered table-striped">
-    <thead class="table-dark">
+	<table class="table table-striped">
+    <thead>
         <tr>
             <th>Color</th>
             <th>Número de Departamentos</th>
@@ -74,4 +72,7 @@
 <!-- Bootstrap JS (opcional, si necesitas funcionalidades de Bootstrap) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        &copy; 2025 Alejandro Imbaquingo - Todos los derechos reservados
+    </footer>
 </html>

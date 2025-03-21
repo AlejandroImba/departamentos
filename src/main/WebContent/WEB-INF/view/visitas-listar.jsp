@@ -10,10 +10,11 @@
           rel="stylesheet" 
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
           crossorigin="anonymous">
+                                  <link rel="icon" href="/bddepartamentos-web/resources/img/logo.png">
+             <link rel="stylesheet" href="/bddepartamentos-web/resources/css/css.css">
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/bddepartamentos-web/admin">CONJUNTOSIMBA</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,19 +23,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="nav nav-tabs me-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Visitas</a>
+          <a class="nav-link active" aria-current="page" href="#">Gestion Visitas</a>
         </li>
                 <li class="nav-item">
-          <a class="nav-link" href="/bddepartamentos-web/visitas/findAll?idVisita=1">Guardia</a>
-        </li>
+          <a class="nav-link" href="/bddepartamentos-web/guardia/">Guardia</a>
       </ul>
       <!-- Botón de Iniciar sesión como Admin alineado a la derecha -->
       <div class="d-flex">
-        <a href="/bddepartamentos-web/" class="btn btn-outline-primary">Salir del modo Guardia</a>
+        <a href="/bddepartamentos-web/" class="btn btn-outline-light">Salir del Modo Guardia</a>
       </div>
     </div>
   </div>
 </nav>
+<br>
 	 <center><button type="button" class="btn btn-primary" onclick="window.location.href='/bddepartamentos-web/visitas/findOne?opcion=1'; return false;">Agregar</button></center>
 	<br>
 	<br>
@@ -76,4 +77,7 @@
         crossorigin="anonymous"></script>
 
 </body>
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        &copy; 2025 Alejandro Imbaquingo - Todos los derechos reservados
+    </footer>
 </html>

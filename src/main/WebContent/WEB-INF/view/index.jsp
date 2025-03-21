@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-
+    <link rel="icon" href="/bddepartamentos-web/resources/img/logo.png">
+    <link rel="stylesheet" href="/bddepartamentos-web/resources/css/css.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
           rel="stylesheet" 
@@ -22,11 +23,12 @@
             text-align: center;
         }
 
+
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/bddepartamentos-web/">CONJUNTOSIMBA</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,20 +45,20 @@
         <li class="nav-item">
           <a class="nav-link" href="areas/areassociales">Areas Sociales</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="reclamos/formreclamos">Dejar un reclamo</a>
-        </li>
+
       </ul>
       <!-- Botón de Iniciar sesión como Admin alineado a la derecha -->
+ 
       <div class="d-flex">
         <a href="login/" class="btn btn-outline-primary">Iniciar sesión como Admin</a>
       </div>
+     
       <br>
-            <div class="d-flex">
+            <div class="d-flex btnGuard">
         <a href="loginguardia/" class="btn btn-outline-secondary">Iniciar sesión como Guardia</a>
       </div>
+        </div>
     </div>
-  </div>
 </nav>
 <header class="hero">
         <div>
@@ -103,7 +105,7 @@
     </div>
     
     <footer class="bg-dark text-white text-center p-3 mt-5">
-        &copy; 2025 Departamentos XYZ - Todos los derechos reservados
+        &copy; 2025 Alejandro Imbaquingo - Todos los derechos reservados
     </footer>
     
 <!-- Bootstrap JavaScript (Al final del body) -->

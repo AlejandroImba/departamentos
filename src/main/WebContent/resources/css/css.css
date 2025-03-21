@@ -1,0 +1,25 @@
+.nav a{
+	color: white;	
+	text-decoration: none;
+}
+.nav a:hover{
+	color: red;
+	margin:auto;
+}
+
+.d-flex{
+	margin: 10px;
+
+}
+.d-flex a{
+	color:white;
+	border-color:white;
+	border-radius:10px;
+}
+.d-flex:hover{
+	color:red;
+	border-color:white;
+}
+.btnGuard a{
+	color:white;
+}
